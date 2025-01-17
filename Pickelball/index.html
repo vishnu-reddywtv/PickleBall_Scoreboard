@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickle Ball Scoreboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="scoreboard">
+    <div>
+      <img src="./PickleBall-logo.png" alt="" id="WTLogo">
+    </div>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="team" id="team-left">DELHI</div>
+      <div class="timer">14:20</div>
+      <div class="team" id="team-right">MUMBAI</div>
+    </header>
+
+    <!-- Match Type -->
+    <div class="match-type">MIXED DOUBLE</div>
+
+    <!-- Players Section -->
+    <div class="players">
+      <div class="team-players-left">
+        <div class="player">
+          
+          <!-- <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div> -->
+          <span class="radio left-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+    
+          <span class="radio left-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+          <span >MARIA <b>KLOKOTZY</b></span>
+        </div>
+        <div class="player">
+          <span class="radio left-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+          <span class="radio left-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+          <span >ETIENNE <b>BLASZKEWYCZ</b></span>
+        </div>
+      </div>
+      <div class="switch">
+        <!-- <button id="refreshButton">↺</button> -->
+         <button id="refreshButton"><img src="./Refresh-icon.png" alt=""></button>
+        
+      </div>
+      <div class="team-players-right">
+        <div class="player">
+          <span class="radio right-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+          <span class="radio right-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+          <span>THADDEA <b>LOCK</b></span>
+          
+        </div>
+        <div class="player">
+          <span class="radio right-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+          <span class="radio right-aligned" onclick="toggleRadio(this)" data-enabled="false"></span>
+          <span>EDWARD <b>PEREZ</b></span>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="controls">
+      <div id="review-left">
+      <button class="review-button" i>REVIEW</button>
+      <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+      <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+      </div>
+      <!-- <span class="score">2</span> -->
+      <!-- <div class="score">2</div> -->
+      <!-- <button>+</button>
+      <button>-</button>
+      <div class="timer-controls">1:00</div>
+      <span class="score">2</span> -->
+      <!-- <div class="score">2</div> -->
+      <!-- <button>+</button>
+      <button>-</button> -->
+      <div class="container">
+        <div class="counter">
+          <div class="value" id="value-left">0</div>
+          <div class="buttons">
+            <button class="button" id="increment-left">+</button>
+            <button class="button" id="decrement-left">-</button>
+          </div>
+        </div>
+        <div class="timer-internal-buttons">
+          <div class="timer-controls">
+            <button class="timer-button" onclick="startTimer_Internal()">START / RESET</button>
+            <button class="timer-button" onclick="stopTimer_Internal()">STOP</button>
+          </div>
+          <div id="timer" class="timer-internal">01:00</div>
+        </div>
+        <div class="counter">
+          
+          <div class="buttons">
+            <button class="button" id="increment-right">+</button>
+            <button class="button" id="decrement-right">-</button>
+          </div>
+          <div class="value" id="value-right">0</div>
+        </div>
+      </div>
+      <div id="review-right">
+      <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+      <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+      <button class="review-button">REVIEW</button>
+      </div>
+    </div>
+    <div class="warnings">
+      <div id="warnings-left">
+      
+      <button id="verbal-warning-left">VW <div id="verbal-warning-left-value"></div></button>
+      <button id="technical-warning-left">TW <div id="technical-warning-left-value"></div></button>
+      <button id="technical-foul-left">TF <div id="technical-foul-left-value"></div></button>
+      </div>
+      <div id="warnings-right">
+      <button id="technical-foul-right" >TF <div id="technical-foul-right-value"></div></button>
+      <button id="technical-warning-right">TW <div id="technical-warning-right-value"></div></button>
+      <button id="verbal-warning-right">VW <div id="verbal-warning-right-value"></div></button>
+      </div>
+    </div>
+    <div class="pickle-play-both">
+      <div class="pickle-play-left">
+        <button class="pickle-play-button">PICKLE PLAY</button>
+       
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+      </div>
+
+      <div class="pickle-play-right">
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <div class="custom-radio" onclick="toggleRadio(this)" data-enabled="false"></div>
+        <button class="pickle-play-button">PICKLE PLAY</button>
+      </div>
+    </div>
+
+    <!-- Match Scores -->
+    <div class="match-scores">
+      <div class="Match_Numbers">
+        <div><b>TB</b></div>
+        <div><b>M5</b></div>
+        <div><b>M4</b></div>
+        <div><b>M3</b></div>
+        <div><b>M2</b></div>
+        <div><b>M1</b></div>
+      
+      </div>
+      <div class="match-row-team1">
+        <div class="match-row">
+          <div class="team-name">DELHI</div>
+          <div class="scores">
+            <div class="score-box"><b>5</b></div>
+            <div class="score-box"><b>17</b></div>
+            <div class="score-box"><b>11</b></div>
+            <div class="score-box"><b>2</b></div>
+            <div class="score-box"><b>0</b></div>
+            <div class="score-box"><b>0</b></div>
+            <div class="score-box-total"><b>0</b></div> 
+          </div>
+        </div>
+        <button class="match-row-button"><b>START TIME</b></button>
+        <button class="match-row-button"><b>STOP TIME</b></button>
+      </div>
+      
+      <div class="match-row-team2">
+        <div class="match-row">
+          <div class="team-name">MUMBAI</div>
+          <div class="scores">
+            <div class="score-box"><b>10</b></div>
+            <div class="score-box"><b>19</b></div>
+            <div class="score-box"><b>18</b></div>
+            <div class="score-box"><b>0</b></div>
+            <div class="score-box"><b>0</b></div>
+            <div class="score-box"><b>0</b></div>
+            <div class="score-box-total"><b>3</b></div>
+          </div>
+        </div>
+        <button class="match-row-button"><b>RESET TIME</b></button>
+        <button class="match-row-button"><b>UNDO</b></button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <img src="./bottom-band.png" alt="">
+  </footer>
+</body>
+</html>
